@@ -22,8 +22,8 @@
 				<div class="row">
 					<div id="left-col" class="col-md-8">
 						<div id="intro" class="row">
-							<img id="ticket" src="<?php echo get_template_directory_uri() ?>/assets/images/broken-concert-ticket-web.jpg" alt="Broken Concert Ticket" />
-							<img id="cd-cover" class="pull-right" src="<?php echo get_template_directory_uri() ?>/assets/images/broken-cover-promo-web.jpg" alt="Broken - Single CD Cover" />
+							<a href="<?php echo home_url('concert') ?>"><img id="ticket" src="<?php echo get_template_directory_uri() ?>/assets/images/broken-concert-ticket-web.jpg" alt="Broken Concert Ticket" /></a>
+							<a href="<?php echo home_url('broken-single') ?>"><img id="cd-cover" class="pull-right" src="<?php echo get_template_directory_uri() ?>/assets/images/broken-cover-promo-web.jpg" alt="Broken - Single CD Cover" /></a>
 						</div>
 
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
