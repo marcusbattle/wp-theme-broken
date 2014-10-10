@@ -1,0 +1,257 @@
+$red: #ed1c2b;
+$yellow: #ffef31;
+$twitter-blue: #4099FF;
+
+
+@font-face {
+    font-family: 'destroy';
+    src: url('../fonts/destroy/DESTROY_-webfont.eot');
+    src: url('../fonts/destroy/DESTROY_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/destroy/DESTROY_-webfont.woff') format('woff'),
+         url('../fonts/destroy/DESTROY_-webfont.ttf') format('truetype'),
+         url('../fonts/destroy/DESTROY_-webfont.svg#destroy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dirtyego';
+    src: url('../fonts/dirtyego/dirtyego-webfont.eot');
+    src: url('../fonts/dirtyego/dirtyego-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dirtyego/dirtyego-webfont.woff2') format('woff2'),
+         url('../fonts/dirtyego/dirtyego-webfont.woff') format('woff'),
+         url('../fonts/dirtyego/dirtyego-webfont.ttf') format('truetype'),
+         url('../fonts/dirtyego/dirtyego-webfont.svg#dirtyego') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-image: url("../images/restored-cars-background-bw.jpg");
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+h2 {
+	font-size: 24px;
+	&.red {
+		color: $red;
+	}
+}
+
+#right-col {
+	width: 325px;
+	float: right;
+}
+
+#intro {
+
+	img {
+		box-shadow: 0 0 10px 0 #333;
+	}
+
+}
+
+.row {
+	margin-bottom: 20px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+
+	> img {
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+	}
+
+	&.pad {
+		padding: 0 15px 15px 15px;
+	}
+
+	&.post {
+		min-height: 600px;
+	}
+
+}
+
+.white {
+	background-color: #fff;
+}
+
+.grey {
+	background-color: #555;
+	color: #eee;
+}
+
+.frost {
+	background-image: url("../images/white-shadow.png");
+
+	.table {
+		background-color: #fff;
+	}
+
+}
+
+.street {
+	background-color: #555;
+	color: #eee;
+}
+
+.red {
+	background-color: $red;
+}
+
+.pad {
+	padding: 0 15px 15px 15px;
+}
+
+.menu {
+	margin-top: 5px;
+	float: right;
+
+	> li {
+		display: inline-block;
+
+		a {
+			padding: 10px 7px;
+			display: block;
+			cursor: pointer;
+			color: #333;
+			text-decoration: none;
+
+			&:hover {
+				color: $red;
+			}
+
+		}
+
+	}
+
+}
+
+a.button,
+.button {
+	background-color: #ed1c2b;
+	padding: 7px 4px;
+	cursor: pointer;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	min-width: 150px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	
+	border: none;
+	
+	.fa {
+		margin-right: 4px;
+	}
+
+	&.twitter-blue {
+		background-color: $twitter-blue;
+	}
+
+	&.yellow {
+		background-color: $yellow;
+		color: #333;
+	}
+
+	&.wide {
+		width: 100%;
+	}
+
+	&.clear {
+		background-color: transparent;
+		color: #666;
+		border: 1px solid #ddd;
+	}
+
+	&.bordered {
+		background-color: #333;
+		border: 1px solid inherit;
+	}
+
+}
+
+#ticket {
+	max-height: 520px;
+}
+
+#cd-cover {
+	max-height: 520px;
+}
+
+@media (max-width: 1200px) {
+
+	#ticket {
+		height: 430px;
+	}
+
+	#cd-cover {
+		height: 430px;
+	}
+
+	#right-col {
+		width: 300px;
+	}
+
+}
+
+
+@media (max-width: 992px) {
+
+	.menu {
+		clear: both;
+		display: block;
+		float: left;
+		padding-left: 15px;
+
+		background-image: url("../images/white-shadow.png");
+		width: 100%;
+
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+	}
+
+	#ticket {
+		height: 510px;
+	}
+
+	#cd-cover {
+		height: 510px;
+	}
+
+	#right-col {
+		width: 100%;
+		margin: 0;
+		float: none;
+
+		.row {
+			width: 100%;
+		}
+
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	#ticket {
+		margin-bottom: 20px;
+	}
+
+	#ticket,
+	#cd-cover {
+		width: 100%;
+		height: inherit;
+		max-height: inherit;
+	}
+
+}
