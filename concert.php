@@ -38,7 +38,7 @@
 		<div class="container-fluid">
 			<div class="container">
 				<div class="row" style="padding-top: 10px; margin-bottom: 25px;">
-					<a href=""><img src="<?php echo get_template_directory_uri() ?>/assets/images/tammy-battle-logo.png" width="285px" height="50px" /></a>
+					<a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/tammy-battle-logo.png" width="285px" height="50px" /></a>
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false ) ); ?>
 				</div>
 			</div>
@@ -74,43 +74,50 @@
 										</tr>
 									</tbody>
 								</table>
-								<h4>Complete the form to purchase your ticket</h4>
-								<form class="form-horizontal" role="form" action="" method="POST">
-									<div class="form-group">
-										<label for="first_name" class="col-sm-3 control-label">First Name</label>
-									    <div class="col-sm-9">
-									    	<input type="first_name" class="form-control required" id="first_name" placeholder="First Name" value="<?php echo $first_name ?>">
-									    </div>
-									</div>
-									<div class="form-group">
-										<label for="last_name" class="col-sm-3 control-label">Last Name</label>
-									    <div class="col-sm-9">
-									    	<input type="last_name" class="form-control required" id="last_name" placeholder="Last Name" value="<?php echo $last_name ?>">
-									    </div>
-									</div>
-									<div class="form-group">
-										<label for="quantity" class="col-sm-3 control-label"># of Tickets</label>
-										<div class="col-sm-9">
-											<select class="form-control required" name="quantity">
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5">5</option>
-											</select>
+								<?php if ( isset( $_REQUEST['payment_id']) ): ?>
+									<h4>Payment Success!</h4>
+									<p>Your payment was successfuly submitted!</p>
+								<?php else: ?>
+									<h4>Complete the form to purchase your ticket</h4>
+									<form class="form-horizontal" role="form" action="" method="POST">
+										<div class="form-group">
+											<label for="first_name" class="col-sm-3 control-label">First Name</label>
+										    <div class="col-sm-9">
+										    	<input type="first_name" class="form-control required" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name ?>">
+										    </div>
 										</div>
-									</div>
-									<div class="form-group">
-										<label for="last_name" class="col-sm-3 control-label">Amount</label>
-									    <div class="col-sm-9">
-									    	<p id="total" class="form-control-static">$7.00</p>
-									    </div>
-									</div>
-									<input name="stripeEmail" type="hidden" value="" />
-									<input name="stripeToken" type="hidden" value="" />
-									<input name="stripeType" type="hidden" value="" />
-									<button class="stripe-button button wide">Purchase Ticket</button>
-								</form>
+										<div class="form-group">
+											<label for="last_name" class="col-sm-3 control-label">Last Name</label>
+										    <div class="col-sm-9">
+										    	<input type="last_name" class="form-control required" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $last_name ?>">
+										    </div>
+										</div>
+										<div class="form-group">
+											<label for="quantity" class="col-sm-3 control-label"># of Tickets</label>
+											<div class="col-sm-9">
+												<select class="form-control required" name="quantity">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="last_name" class="col-sm-3 control-label">Amount</label>
+										    <div class="col-sm-9">
+										    	<p id="total" class="form-control-static">$7.00</p>
+										    	<input name="amount" type="hidden" value="" />
+										    </div>
+										</div>
+										<input name="description" type="hidden" value="" />
+										<input name="stripeEmail" type="hidden" value="" />
+										<input name="stripeToken" type="hidden" value="" />
+										<input name="stripeType" type="hidden" value="" />
+										<button class="stripe-button button wide">Purchase Ticket</button>
+									</form>
+								<?php endif; ?>
 							</div>
 						</div>
 						<div class="row">
@@ -162,7 +169,7 @@
 		var email = "<?php echo $email ?>";
 		var name = "<?php echo get_bloginfo('name') ?>";
 		var orig_description = "Ticket(s) for Broken Live";
-		var description = description;
+		var description = "1 " + orig_description;
 		var orig_amount = 700;
 		var amount = orig_amount;
 
@@ -176,7 +183,7 @@
 				$('input[name="stripeEmail"]').val( token.email );
 
 				$(form).submit();
-				
+
 			}
 		});
 
@@ -190,6 +197,10 @@
 				return false;
 
 			}
+
+			// Populate fields
+			$('input[name="amount"]').val( amount );
+			$('input[name="description"]').val( description );
 
 			// Open Checkout with further options
 			handler.open({

@@ -12,7 +12,7 @@
 		<div class="container-fluid">
 			<div class="container">
 				<div class="row" style="padding-top: 10px; margin-bottom: 25px;">
-					<a href=""><img src="<?php echo get_template_directory_uri() ?>/assets/images/tammy-battle-logo.png" width="285px" height="50px" /></a>
+					<a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/images/tammy-battle-logo.png" width="285px" height="50px" /></a>
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container' => false ) ); ?>
 				</div>
 			</div>
