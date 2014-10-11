@@ -85,7 +85,16 @@
 								</table>
 								<?php if ( isset( $_REQUEST['payment_id']) ): ?>
 									<h4>Payment Success!</h4>
-									<p>Your payment was successfuly submitted!</p>
+									<p>Your payment was successfuly submitted! A receipt has been emailed to you.</p>
+									<p>If you do not receive a receipt within 24hrs, please email tammy@tammybattle.com.</p>
+									<?php
+										$tweet = "?url=" . urlencode( "http://bit.ly/1o25QAg" );
+										$tweet .= "&original_referer=" . urlencode( home_url() . $_SERVER['REQUEST_URI'] );
+										$tweet .= "&text=" . urlencode( "I'm going to hear @Tammy_Battle perform her new single \"Broken\" 11/8/14" );
+										$tweet .= "&hashtags=" . urlencode( "BrokenLive,NewMusic" );
+										$tweet .= "&related=" . urlencode( "@Tammy_Battle" );
+									?>
+									<a class="button wide twitter-blue" href="https://twitter.com/intent/tweet<?php echo $tweet ?>" data-text="Have you heard? @Tammy_battle is"><i class="fa fa-twitter"></i> Spread The Word</a>
 								<?php else: ?>
 									<h4>Complete the form to purchase your ticket</h4>
 									<form class="form-horizontal" role="form" action="" method="POST">
