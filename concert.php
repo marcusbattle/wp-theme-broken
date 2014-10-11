@@ -19,6 +19,15 @@
 		$email = '';
 
 	}
+
+	$stripe_mode = get_option('stripe_mode');
+
+	if ( $stripe_mode ) {
+		$stripe_key = get_option('stripe_live_public_key');
+	} else {
+		$stripe_key = get_option('stripe_test_public_key');
+	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -164,6 +173,7 @@
 <script>
 	(function( $ ) {
 		
+		var stripe_key = "<?php echo $stripe_key ?>";
 		var form = $('.stripe-button').closest('form');
 
 		var email = "<?php echo $email ?>";
@@ -174,7 +184,7 @@
 		var amount = orig_amount;
 
 		var handler = StripeCheckout.configure({
-			key: 'pk_0GPSN2GT3hbJijZPFJS2XF8ZiEmRg',
+			key: stripe_key,
 			token: function(token) {
 				// Use the token to create the charge with a server-side script.
 				// You can access the token ID with `token.id`
