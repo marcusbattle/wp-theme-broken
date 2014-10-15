@@ -42,6 +42,7 @@
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="https://checkout.stripe.com/checkout.js"></script>
+		<?php wp_head(); ?>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -176,6 +177,7 @@
 				</div>
 			</div>
 		</div>
+		<?php wp_footer(); ?>
 	</body>
 </html>
 

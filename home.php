@@ -7,6 +7,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="<?php echo get_template_directory_uri() ?>/assets/css/style.css" type="text/css" rel="stylesheet" /> 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<?php wp_head(); ?>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -106,6 +107,7 @@
 				</div>
 			</div>
 		</div>
+		<?php wp_footer(); ?>
 	</body>
 </html>
 
