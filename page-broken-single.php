@@ -139,6 +139,8 @@
 									<input name="stripeType" type="hidden" value="" />
 									<button class="stripe-button button wide">Buy "Broken" Now</button>
 								</form>
+								<p>&nbsp;</p>
+								<p align="center">If you have problems downloading, please e-mail press@tammybattle.com.</p>
 							<?php endif; ?>
 						</div>
 					</div>
