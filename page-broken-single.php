@@ -87,7 +87,7 @@
 								<h2>iTunes?</h2>
 								<p>If you have an iPhone or iPad,<a href="https://itunes.apple.com/us/album/broken-single/id930896157"> download from iTunes</a>.</p>
 								<h2>Droid?</h2>
-								<p>Download the single directly from this secure form, or wait 2 weeks for it to be available in Goole Play. Yeah we knew you couldn't wait that long.</p>
+								<p>Download the single directly from this secure form, or wait 2 weeks for it to be available in Google Play. Yeah we knew you couldn't wait that long.</p>
 								<form class="form-horizontal" role="form" action="" method="POST">
 									<div class="form-group">
 										<label for="first_name" class="col-sm-3 control-label">First Name</label>
