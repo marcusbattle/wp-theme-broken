@@ -62,7 +62,9 @@
 
 								<h4>Payment Success. Thank You for your support!</h4>
 								<p>Your payment was successfuly submitted! A receipt has been emailed to you. If you do not receive a receipt within 24hrs or have trouble downloading your copy of "Broken", please email tammy@tammybattle.com.</p>
-								<p><a class="button wide twitter-blue" href="<?php echo home_url('download?payment_id=' . $_REQUEST['payment_id']); ?>">Download</a></p>
+								<!-- <p><a class="button wide twitter-blue" href="<?php echo home_url('download?payment_id=' . $_REQUEST['payment_id']); ?>">Download</a></p> -->
+								<p><a class="button wide twitter-blue" href="http://tammybattle.com/wp-content/uploads/sites/7/2014/10/01-Broken.mp3" download="01-Broken.mp3">Download</a></p>
+								
 								<?php
 									$tweet = "?url=" . urlencode( "http://tammybattle.com/broken-single" );
 									$tweet .= "&original_referer=" . urlencode( home_url() . $_SERVER['REQUEST_URI'] );
