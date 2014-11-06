@@ -97,7 +97,11 @@
 									?>
 									<a class="button wide twitter-blue" href="https://twitter.com/intent/tweet<?php echo $tweet ?>" data-text="Have you heard? @Tammy_battle is"><i class="fa fa-twitter"></i> Spread The Word</a>
 								<?php else: ?>
-									<h4>Complete the form to purchase your ticket</h4>
+									<h4>Purchase your tickets in person</h4>
+									<p>A limited number of tickets will be available upon arrival to the Paramount Theatre. If you need to purchase with cash, please arrive between 5:30PM-6:00PM to purchase your ticket at the door.</p>
+									<p>&nbsp;</p>
+									<h4>Purchase your tickets securely online</h4>
+									<p>Complete this form to purchase your ticket and avoid waiting in line on the day of the concert!</p>
 									<form class="form-horizontal" role="form" action="" method="POST">
 										<div class="form-group">
 											<label for="first_name" class="col-sm-3 control-label">First Name</label>
